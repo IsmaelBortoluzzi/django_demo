@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Funcionarios</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>NOME COMPLETO</th>
+            <th>CARGO</th>
+            <th>SALARIO</th>
+            <th>CPF</th>
+            <th>EDITAR</th>
+        </tr>
+        {% for funcionario in funcionarios %}
+            <tr>
+                <td>{{ funcionario.nome }}</td>
+                <td>{{ funcionario.cargo }}</td>
+                <td>{{ funcionario.salario }}</td>
+                <td>{{ funcionario.cpf }}</td>
+                <td><a href="{% url 'update-funcionario' funcionario.id %}"></a></td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
